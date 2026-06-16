@@ -1,0 +1,31 @@
+{
+  "name": "rr-qa-automation-assignment",
+  "version": "1.0.0",
+  "description": "QA Automation Assignment for Rapyuta Robotics – TMDB Discover UI & API Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 60000 --recursive tests/**/*.test.js --reporter spec",
+    "test:ui": "mocha --timeout 60000 tests/ui/**/*.test.js --reporter spec",
+    "test:api": "mocha --timeout 30000 tests/api/**/*.test.js --reporter spec",
+    "test:report": "mocha --timeout 60000 --recursive tests/**/*.test.js --reporter mochawesome --reporter-options reportDir=reports,reportFilename=test-report,autoOpen=false",
+    "test:ci": "mocha --timeout 60000 --recursive tests/**/*.test.js --reporter mocha-junit-reporter --reporter-options mochaFile=reports/junit/results.xml",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.18.1",
+    "axios": "^1.6.8",
+    "winston": "^3.13.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "chai": "^5.1.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "eslint": "^9.2.0"
+  },
+  "author": "QA Engineer",
+  "license": "MIT"
+}
